@@ -1,5 +1,5 @@
 {
-  "name": "mysql-server",
+  "name": "supply-demand",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -10,7 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.17.1",
     "mysql": "latest",
-    "express": "latest"
+    "nodemon": "^2.0.2",
+    "socket.io": "^2.3.0"
   }
 }
