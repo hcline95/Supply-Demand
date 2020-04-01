@@ -1,27 +1,24 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
-import {
-  Line,
-  LineChart,
-  XAxis,
-  YAxis
-} from 'recharts';
+import  { Button }  from 'react-bootstrap'
+import PriceGraph from '../charts/priceChart'
 
 
 
-const PriceGraph = (props) => {
+
+const Price = (props) => {
+ 
+      let length = props.data.length - 1
 
       return (
-        <div>
-            {console.log('this.props', props.data)}
-          <h1>Supply & Demand</h1>
-          <LineChart width={500} height={300} data={props.data}>
-          <XAxis dataKey="name" />
-            <YAxis />
-            <Line dataKey="value" />
-          </LineChart>
-        </div>
+        <>
+          <td>
+            <tr>
+              <h4>Price: ${props.data[length].value}</h4>
+            </tr>
+          </td>
+          </>
       );
 
     }
@@ -32,4 +29,4 @@ const PriceGraph = (props) => {
         })
       }
 
-      export default connect(mapStateToProps)(PriceGraph);
+      export default connect(mapStateToProps)(Price);
