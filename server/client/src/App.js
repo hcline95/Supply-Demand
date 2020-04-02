@@ -4,11 +4,14 @@ import * as actions from './actions';
 import {useEffect} from 'react'
 import { connect } from "react-redux";
 import SupplyDemandGraph from './charts/mainChart';
-import  { Button, Container, Row, Col, Table, Popover }  from 'react-bootstrap'
+import  { Container, Row, Col, Table }  from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import PopOver from './modals/popover'
+import Price from './containers/price'
 import Equalibrium from './containers/equalibrium'
+import SupplierList from './containers/supplierList'
+import Stage from './containers/stage'
+import Start from './modals/modal'
 
 
 const App = (props) => {
@@ -22,40 +25,52 @@ const App = (props) => {
     socket.on('mainGraph', (lines)=>{
       props.fetchGraph(lines)
       props.fetchEqualibrium(lines)
-    })    
+    })   
+    
+    socket.on('suppliers', (suppliers)=>{
+      props.fetchSuppliers(suppliers)
+    }) 
   })
 
-  const handleClick = ()=> {
-    return socket.emit('myClick')
- }
+
       return (
         <div>
+            <Start />
             <Container fluid="md">
-              <Row className='title justify-content-md-center'>
-                  <h1>Supply & Demand</h1>
-              </Row>
-              <Row className='title justify-content-md-center'>
-                  <h4>HandSanitizer</h4>
-                <Button variant="primary" onClick={handleClick} size="lg">
-                  Start Simulation
-                </Button>
-              </Row>
-              <Row className='title justify-content-md-center'>
-                <Table bordered hover>
+              <Row >
+                <Table borderless hover responsive>
                   <tbody>
                     <tr>
-                      <td>
-                        <SupplyDemandGraph />
+                      <td colSpan="2">
+                      <Row className='divider'>
+                      <h1><strong>Hand Sanitizer.</strong></h1>
+                      </Row>
+                      </td>
+                    </tr>
+                    <tr >
+                      <td >
+                        <Row className='title justify-content-md-center'>
+                          <SupplyDemandGraph />
+                        </Row>
+                        <Row className='row-of-small-graphs title justify-content-md-center'>
+                          <Col >
+                          <Equalibrium />
+                          </Col>
+                          <Col >
+                          <Price />
+                          </Col>
+                        </Row>
                       </td>
                       <td>
                         <tr>
-                          <PopOver />
+                        <td>
+                        <Stage />
+                        </td>
                         </tr>
                         <tr>
-                        <Equalibrium />
-                        </tr>
-                        <tr>
-                        <PopOver />
+                        <td>
+                        <SupplierList />
+                        </td>
                         </tr>
                       </td>
                     </tr>

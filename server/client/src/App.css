@@ -1,3 +1,27 @@
-.popover {
-  max-width:2000px;
+
+.pie-chart{
+  height:50px;
+  width:50px;
 }
+
+.supplier-rows{
+  margin: 20px;
+}
+
+.divider{
+  padding: 20px;
+}
+
+/*on start modal*/
+.start{
+  padding: 20px;
+}
+
+.row-of-small-graphs{
+  padding-top:20px;
+}
+.recharts-wrapper{
+  width: 250px;
+  overflow-x: scroll;
+}
+

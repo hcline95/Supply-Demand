@@ -1,11 +1,17 @@
 import { FETCH_EQUALIBRIUM } from '../actions/types';
 
-export default function(state = {data:[{name: "Day 1", value: 2.5}]}, action) {
+export default function(state = {status:[{"shortage": 0 }]}, action) {
   switch (action.type) {
     case FETCH_EQUALIBRIUM:
-      return Object.assign({}, state, {
-        data: [...state.data, action.payload]
-    })
+        if (action.payload <= 0){
+            return Object.assign({}, state, {
+                status: [...state.status, {'shortage': action.payload}]
+            }) 
+        }else {
+            return Object.assign({}, state, {
+                status: [...state.status, {'surplus': action.payload}]
+        })
+    }
     default:
       return state;
   }

@@ -1,10 +1,6 @@
-
+import PriceGraph from '../charts/priceChart'
 import React from 'react';
 import { connect } from 'react-redux';
-import  { Button }  from 'react-bootstrap'
-import PriceGraph from '../charts/priceChart'
-
-
 
 
 const Price = (props) => {
@@ -13,11 +9,8 @@ const Price = (props) => {
 
       return (
         <>
-          <td>
-            <tr>
-              <h4>Price: ${props.data[length].value}</h4>
-            </tr>
-          </td>
+              <h4><strong>Price: ${props.data[length].value}</strong></h4>
+              <PriceGraph/>
           </>
       );
 

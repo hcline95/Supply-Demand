@@ -14,34 +14,9 @@ import {
 
 const EqualibriumGraph = (props) => {
 
-    const data = [
-        {
-          "Day": "1",
-          "shortage": 0
-        },
-        {
-          "Day": "2",
-          "shortage": -50
-        },
-        {
-          "Day": "3",
-          "shortage": 0
-        },
-        {
-          "Day": "4",
-          "surplus": 35
-        },
-        {
-          "Day": "5",
-          "shortage": 0
-        }
-      ]
-
-
       return (
         <>
-        <BarChart width={250} height={150} data={data}>
-            <XAxis dataKey="Day" />
+        <BarChart width={250} height={200} data={props.status}>
             <YAxis />
             <Tooltip />
             <Legend />
@@ -54,8 +29,9 @@ const EqualibriumGraph = (props) => {
     }
 
     function mapStateToProps(state) {
+        console.log(state.Equalibrium)
         return ({
-            equalibrium: state.MainGraph.equalibrium
+            status: state.Equalibrium.status
         })
       }
 

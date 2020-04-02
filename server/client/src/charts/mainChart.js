@@ -34,27 +34,27 @@ class SupplyDemandGraph extends React.Component {
         },
         options: {
           responsive: true,
-          title:{
-            display: true,
-            text: 'Hand Sanitizer',
-            fontSize: 30
-          },
+          animation: false,
           scales: {
             xAxes: [{
               type: 'linear',
               position: 'bottom',
               ticks: {
-                beginAtZero: true
+                min: 0,
+                max: 120,
+                stepSize: 20
               },
               scaleLabel: {
                 display: true,
-                labelString: 'Quanity',
+                labelString: 'Quanity (in hundred thousands)',
                 fontSize: 24
               }
             }],
             yAxes: [{
               ticks: {
-                beginAtZero: true
+                min: 0,
+                max: 6,
+                stepSize: 1
               },
               scaleLabel: {
                 display: true,
@@ -68,13 +68,15 @@ class SupplyDemandGraph extends React.Component {
   
     render() {
       return(
+        <>
+      <h4><strong>Supply & Demand</strong></h4>
       <canvas ref={this.chartRef} className="img-fluid" id="graph" />
+      </>
       )
     }
   }
 
   function mapStateToProps(state) {
-      console.log(state.MainGraph)
     return ({
         
         lines: state.MainGraph

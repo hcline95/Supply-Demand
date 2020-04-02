@@ -20,15 +20,23 @@ io.on('connection', client => {
     //waits for click on client side to start sending intervals back
     client.on('myClick', (data) => {
 
-        //returns the the table
+        //returns the the table from supply and demand
         pool.query('SELECT * FROM Supply_Demand', function (error, results, fields) {
             // error will be an Error if one occurred during the query
             if (error) throw error;
-            // results will csend the table
-        
+
             results.map((row, i)=>{
                  setTimeout(() => {
-                    console.log(i)
+
+                    console.log(row.stage)
+                    //returns suppliers table where the stage ID = to the row.stage id
+                    pool.query(`SELECT * FROM suppliers where stage = ${row.stage}`, function (error, suppliers, fields) {
+                    // error will be an Error if one occurred during the query
+                    if (error) throw error;
+
+                    io.emit('suppliers', suppliers)
+                    })
+    
                     //price graph
                     day = day + 1
                     io.emit('number', {name:`Day ${day}`, value:row.price})
@@ -36,9 +44,10 @@ io.on('connection', client => {
                     //main supply and demand graph
                     io.emit('mainGraph', {demand:[{x:row.demand1x, y:row.demand1y}, {x:row.demand2x, y:row.demand2y}], supply:[{x:row.supply1x, y:row.supply1y}, {x:row.supply2x, y:row.supply2y}], equalibrium: row.equal})
 
-                }, i * 3000);
+                }, i * 2000);
             });
         });
+        
     })
 });
 
