@@ -5,7 +5,6 @@ import {
   Legend,
   XAxis,
   YAxis,
-  CartesianGrid,
   Tooltip,
   BarChart
 } from 'recharts';
@@ -16,7 +15,7 @@ const EqualibriumGraph = (props) => {
 
       return (
         <>
-        <BarChart width={250} height={200} data={props.status}>
+        <BarChart width={600} height={225} data={props.status}>
             <YAxis />
             <Tooltip />
             <Legend />
@@ -29,7 +28,6 @@ const EqualibriumGraph = (props) => {
     }
 
     function mapStateToProps(state) {
-        console.log(state.Equalibrium)
         return ({
             status: state.Equalibrium.status
         })

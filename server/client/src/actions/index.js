@@ -1,9 +1,15 @@
-import { FETCH_DATA, FETCH_GRAPH, FETCH_EQUALIBRIUM, FETCH_SUPPLIERS } from './types';
+import { FETCH_DATA, RESET_DATA, FETCH_GRAPH, FETCH_EQUALIBRIUM, FETCH_SUPPLIERS, FETCH_STAGE,SET_DEMAND_CURVE, SET_SUPPLY_CURVE } from './types';
 
 export function fetchData(number) {
     return {
       type: FETCH_DATA,
       payload: number
+    };
+  }
+
+  export function resetData() {
+    return {
+      type: RESET_DATA
     };
   }
 
@@ -26,4 +32,26 @@ export function fetchData(number) {
       type: FETCH_SUPPLIERS,
       payload: suppliers
     };
+  }
+
+  export function fetchStage(stage) {
+    return {
+      type: FETCH_STAGE,
+      payload: stage
+  }
+  }
+
+
+  export function setDemandCurve(coordinate, equalibrium, color) {
+    return {
+      type: SET_DEMAND_CURVE,
+      payload: {coordinate: coordinate, equalibrium: equalibrium, color: color}
+  }
+  }
+
+  export function setSupplyCurve(coordinate, equalibrium, color) {
+    return {
+      type: SET_SUPPLY_CURVE,
+      payload: {coordinate: coordinate, equalibrium: equalibrium, color: color}
+  }
   }

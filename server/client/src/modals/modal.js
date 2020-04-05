@@ -4,14 +4,13 @@ import  { Button, Container, Row, Col, Table }  from 'react-bootstrap'
 import socket from '../containers/socket'
 
   export default function Start() {
-    const [modalShow, setModalShow] = React.useState(true);
+    const [modalShow, setModalShow] = React.useState(false);
 
     function MyVerticallyCenteredModal(props) {
 
       //starts simulation
       const handleClick = ()=> {
         props.onHide()
-        return socket.emit('myClick')
      }
         return (
           <Modal

@@ -36,10 +36,13 @@ io.on('connection', client => {
 
                     io.emit('suppliers', suppliers)
                     })
+
+                    io.emit('stage', row.stage)
+              
     
                     //price graph
                     day = day + 1
-                    io.emit('number', {name:`Day ${day}`, value:row.price})
+                    io.emit('number', {name:`Day ${day * 5}`, value:row.price})
 
                     //main supply and demand graph
                     io.emit('mainGraph', {demand:[{x:row.demand1x, y:row.demand1y}, {x:row.demand2x, y:row.demand2y}], supply:[{x:row.supply1x, y:row.supply1y}, {x:row.supply2x, y:row.supply2y}], equalibrium: row.equal})

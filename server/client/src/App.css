@@ -1,15 +1,12 @@
 
 .pie-chart{
-  height:50px;
-  width:50px;
-}
-
-.supplier-rows{
-  margin: 20px;
+  height:40px;
+  width:40px;
 }
 
 .divider{
-  padding: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 
 /*on start modal*/
@@ -17,11 +14,122 @@
   padding: 20px;
 }
 
-.row-of-small-graphs{
-  padding-top:20px;
-}
-.recharts-wrapper{
-  width: 250px;
-  overflow-x: scroll;
+.app{
+  padding-right:150px;
+  padding-left:150px;
 }
 
+
+li.list {
+  display:inline-block;
+  border-radius: 2px;
+  background: rgb(205, 233, 205);
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+  width: 175px;
+  height: 250px;
+  margin: 10px;
+}
+
+body{
+  background-color:#eee;
+}
+
+tr{
+  background-color: white;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+}
+
+ul{
+  padding-inline-start:0;
+}
+
+td{
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+}
+
+.popover {
+  position: relative;
+}
+
+.carousel{
+  height:100%;
+  width:100%;
+}
+
+.carousel-caption{
+  color: black;
+  bottom:10%;
+  top:10%;
+}
+
+.carousel-caption.title{
+  top:10%;
+  bottom:auto;
+  color: black;
+}
+
+.carousel-caption.bottom{
+  bottom:10%;
+  top:auto;
+  color: black;
+}
+
+.econLab{
+  font-size: 1500%;
+}
+
+.header{
+  background-color: rgb(255, 214, 109);
+  padding-top: 150px;
+  padding-bottom:150px;
+  border-bottom:solid;
+  border-top:solid;
+  border-width: 20px;
+  border-color:#eee
+}
+
+.card{
+  height: 100%;
+  border: solid;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+  border-color: rgb(255, 214, 109);
+  border-width: 50px;
+}
+
+
+.card-text.final{
+  padding-top: 12%;  
+  padding-bottom: auto;
+}
+
+.card-title{
+  padding-top:5%;
+}
+
+.nav{
+  height: 125px;
+}
+
+.main-page{
+  background-color: white;
+}
+
+tbody {
+  background-color:#eee;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+}
+
+img{
+  height:100%;
+}
+.tutorial{
+  background-color: white;
+}
+
+.green{
+  color:green;
+}
+
+.red{
+  color:red;
+}

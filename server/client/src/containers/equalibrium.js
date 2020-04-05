@@ -17,11 +17,11 @@ import { connect } from 'react-redux';
                 )
             }else if (props.status[length].shortage < 0){
                 return (
-                    <h4><strong>Market Shortage: {props.status[length].shortage}</strong></h4>
+                    <h4><strong>Market Shortage: {props.status[length].shortage }</strong></h4>
                 )
             } else{
                 return (
-                    <h4><strong>Market Surplus:{props.status[length].surplus}</strong></h4>
+                    <h4><strong>Market Surplus:{props.status[length].surplus }</strong></h4>
                 )
             }
         }

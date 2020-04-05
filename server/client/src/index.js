@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import IndexCSS from './index.css'
-import ControlledCarousel from './containers/carousel';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from './containers/home'
 import reducers from './reducers';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
@@ -13,7 +13,12 @@ const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
 ReactDOM.render(
     <Provider store={createStoreWithMiddleware(reducers)}>
-      <App />
+      <Router>
+      <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/simulation" component={App} />
+          </Switch>
+      </Router>
     </Provider>,
   document.getElementById('root')
 );

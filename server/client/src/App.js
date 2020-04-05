@@ -11,12 +11,15 @@ import Price from './containers/price'
 import Equalibrium from './containers/equalibrium'
 import SupplierList from './containers/supplierList'
 import Stage from './containers/stage'
-import Start from './modals/modal'
+import NavBar from './containers/navBar';
+
+
 
 
 const App = (props) => {
 
    useEffect(() =>{
+    
 
     socket.on('number', (number)=>{
       props.fetchData(number)
@@ -30,50 +33,63 @@ const App = (props) => {
     socket.on('suppliers', (suppliers)=>{
       props.fetchSuppliers(suppliers)
     }) 
+
+    socket.on('stage', (stage)=>{
+      console.log('stage in socket', stage)
+      props.fetchStage(stage)
+    }) 
   })
 
 
       return (
         <div>
-            <Start />
-            <Container fluid="md">
+          <NavBar />
+            <Container fluid="fluid" className='app'>
               <Row >
-                <Table borderless hover responsive>
+                <Table bordered hover responsive>
                   <tbody>
-                    <tr>
+                    <td>
+                      <tr>
                       <td colSpan="2">
                       <Row className='divider'>
+                        <tr className="title"><td colspan="3">
                       <h1><strong>Hand Sanitizer.</strong></h1>
+                      </td>
+                    </tr>
                       </Row>
                       </td>
                     </tr>
-                    <tr >
                       <td >
-                        <Row className='title justify-content-md-center'>
-                          <SupplyDemandGraph />
-                        </Row>
-                        <Row className='row-of-small-graphs title justify-content-md-center'>
-                          <Col >
-                          <Equalibrium />
-                          </Col>
-                          <Col >
-                          <Price />
-                          </Col>
-                        </Row>
-                      </td>
-                      <td>
-                        <tr>
+                      <tr>
                         <td>
                         <Stage />
                         </td>
                         </tr>
                         <tr>
-                        <td>
-                        <SupplierList />
+                          <td>
+                        <Row className='title justify-content-md-center'>
+                          <SupplyDemandGraph />
+                        </Row>
                         </td>
                         </tr>
                       </td>
-                    </tr>
+                      <td>
+                        <tr>
+                        <td>
+                        <Equalibrium />
+                        </td>
+                        </tr>
+                        <tr>
+                        <td>
+                          <Price />
+                        </td>
+                      
+                        </tr>
+                      </td>
+                      <tr><td colSpan="2">
+                        <SupplierList />
+                        </td></tr>
+                    </td>
                   </tbody>
                 </Table>
               </Row>
