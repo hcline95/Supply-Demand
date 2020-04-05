@@ -3,6 +3,7 @@ import Chart from 'chart.js'
 import { connect } from 'react-redux';
 import  { Container, Row, Col, Table,Button, Pagination }  from 'react-bootstrap'
 import * as actions from '../actions';
+import PriceGraph from './priceChart'
 
 
 class TutorialGraph extends React.Component {
@@ -25,10 +26,10 @@ class TutorialGraph extends React.Component {
         this.props.setDemandCurve(this.props.demand - 1, [{x:this.props.equalibrium[0].x -.5, y:this.props.equalibrium[0].y-.5 }], 'red')
         this.props.fetchData({value: this.props.equalibrium[0].x -.5})
       } else if (event.target.value === 'supplyRight'){
-        this.props.setSupplyCurve({y1: this.props.supply.y1-1, y2: this.props.supply.y2-1}, [{x:this.props.equalibrium[0].x +.5, y:this.props.equalibrium[0].y-.5 }], 'green')
+        this.props.setSupplyCurve({y1: this.props.supply.y1-1, y2: this.props.supply.y2-1}, [{x:this.props.equalibrium[0].x +.5, y:this.props.equalibrium[0].y-.5 }], 'red')
         this.props.fetchData({value:this.props.equalibrium[0].x +.5})
       } else if (event.target.value === 'supplyLeft'){
-        this.props.setSupplyCurve({y1: this.props.supply.y1+1, y2: this.props.supply.y2+1}, [{x:this.props.equalibrium[0].x -.5, y:this.props.equalibrium[0].y+.5 }], 'red')
+        this.props.setSupplyCurve({y1: this.props.supply.y1+1, y2: this.props.supply.y2+1}, [{x:this.props.equalibrium[0].x -.5, y:this.props.equalibrium[0].y+.5 }], 'green')
         this.props.fetchData({value:this.props.equalibrium[0].x -.5})
       }
     }
@@ -72,7 +73,7 @@ class TutorialGraph extends React.Component {
               },
               scaleLabel: {
                 display: true,
-                labelString: 'Quanity (in hundred thousands)',
+                labelString: 'Quanity (in hundreds)',
                 fontSize: 24
               }
             }],
@@ -130,7 +131,7 @@ class TutorialGraph extends React.Component {
                 },
                 scaleLabel: {
                   display: true,
-                  labelString: 'Quanity (in hundred thousands)',
+                  labelString: 'Quanity (in hundreds)',
                   fontSize: 24
                 }
               }],
@@ -155,32 +156,59 @@ class TutorialGraph extends React.Component {
       return(
  
         <>
-        <Row>
-          <Col>
-        <Row>
-      <canvas ref={this.chartRef} className="img-fluid" id="graph" />
-      </Row>
-        </Col>
+    
+      <Row className='justify-content-md-center'>
         <Col>
+          <Row className='justify-content-md-center'>
+            <h4><strong>Supply & Demand</strong></h4>
+            <canvas ref={this.chartRef} className="img-fluid" id="graph" />
+          </Row>
+        </Col>
+        <Col md="auto">
+        
+          <h1><strong>Price:</strong></h1>
+          <h1><strong className={this.props.color}>${this.props.equalibriumX}</strong></h1>
+          <br/>
+          <h1 ><strong>Quanity:</strong></h1>
+          <h1><strong className={this.props.color}>{this.props.equalibriumY * 100}</strong></h1>
+     
+
+    
+  
       <Row className='justify-content-md-center'>
-      <h4 ><strong>Price:</strong></h4>
-      <h4><strong className={this.props.color}>${this.props.equalibriumX}</strong></h4>
-      </Row>
-      <Row className='justify-content-md-center'>
-      <h4 ><strong>Quanity:</strong></h4>
-      <h4><strong className={this.props.color}>{this.props.equalibriumY}</strong></h4>
-      </Row>
-      <Row  className='justify-content-md-center'>
-      <p>Click the right arrow to move the demand line right.</p>
-      </Row>
-      <Row  className='justify-content-md-center'>
-      <Button onClick={this.handleClick} value='demandRight'>Moves the Demand Curve Right</Button>
-      <Button onClick={this.handleClick} value='demandLeft'>Moves the Demand Curve Left</Button>
-      <Button onClick={this.handleClick} value='supplyRight'>Moves the Supply Curve Right</Button>
-      <Button onClick={this.handleClick} value='supplyLeft'>Moves the Supply Curve Left</Button>
+        <Col>
+          <p>Click the right arrow to move the demand line right.</p>
+  
+          <Row  className='justify-content-md-center'>
+            <Col>
+            <Button onClick={this.handleClick} variant="outline-dark" value='demandLeft' size="lg"><i class="fas fa-arrow-left"></i> Left</Button>
+            <Button size="lg" variant="dark" >Demand</Button>
+            <Button onClick={this.handleClick} variant="outline-dark" value='demandRight' size="lg">Right <i class="fas fa-arrow-right"></i></Button>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+            <Button onClick={this.handleClick} variant="outline-dark" size="lg" value='supplyLeft'><i class="fas fa-arrow-left"></i> Left</Button>         
+            
+            <Button size="lg" variant="dark" >Supply </Button>
+            <Button onClick={this.handleClick} variant="outline-dark" size="lg" value='supplyRight'>Right <i class="fas fa-arrow-right"></i></Button>
+            </Col>
+          </Row>
+     
+        </Col>
       </Row>
       </Col>
-        </Row>
+      </Row>
+      <Row  className='justify-content-md-center'>
+        <Col>
+          <Row  className='justify-content-md-center'>
+          <h4><strong>Price</strong></h4>
+          </Row>
+          <Row  className='justify-content-md-center'>
+          <PriceGraph />
+          </Row>
+        </Col>
+      </Row>
   </>
       )
     }

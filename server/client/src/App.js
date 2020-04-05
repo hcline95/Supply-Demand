@@ -51,11 +51,8 @@ const App = (props) => {
                     <td>
                       <tr>
                       <td colSpan="2">
-                      <Row className='divider'>
-                        <tr className="title"><td colspan="3">
-                      <h1><strong>Hand Sanitizer.</strong></h1>
-                      </td>
-                    </tr>
+                      <Row className='divider justify-content-md-center'>
+                      <h1><strong>Supply & Demand of Hand Sanitizer in a Pandemic.</strong></h1>
                       </Row>
                       </td>
                     </tr>

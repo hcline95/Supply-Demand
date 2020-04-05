@@ -4,7 +4,7 @@ const line = require('./formula')
 var mysql = require('mysql');
 
 //connects SQL database
-
+var pool  = mysql.createPool();
 
 //sets up socket
 const io = require('socket.io')(server, {
@@ -38,7 +38,7 @@ io.on('connection', client => {
                     })
 
                     io.emit('stage', row.stage)
-              
+                
     
                     //price graph
                     day = day + 1

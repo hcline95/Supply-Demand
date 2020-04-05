@@ -31,7 +31,7 @@ li.list {
 }
 
 body{
-  background-color:#eee;
+  background-color: #eee;
 }
 
 tr{
@@ -132,4 +132,21 @@ img{
 
 .red{
   color:red;
+}
+
+
+.card.info{
+
+  border: solid;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+  border-color: #eee;
+  border-width: 20px;
+}
+
+.home-container{
+  background-color: white;
+  border: solid;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+  border-color: black;
+  border-width: 10px;
 }
