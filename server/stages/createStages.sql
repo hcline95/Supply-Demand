@@ -1,5 +1,9 @@
-/* Delete the tables if they already exist */
-/*drop table supply_demand
+create database final;
+
+use final;
+
+drop table supply_demand;
+ 
 
 /* Create the schema for our tables */
 create table supply_demand(id int, stage decimal, demand1x int, demand1y int , demand2x int, demand2y int , supply1x int, supply1y int, supply2x int, supply2y int, price float(8,2), quantity int, equal int);

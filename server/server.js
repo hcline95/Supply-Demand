@@ -1,8 +1,8 @@
-const server = require('http').createServer();
+const server = http.createServer(app);
 const express = require('express');
-const line = require('./formula')
 var mysql = require('mysql');
 const keys = require('./config/keys');
+const port = process.env.PORT || 8000;
 
 //connects SQL database
 var pool  = mysql.createPool(keys.CLEARDB_DATABASE_URL);
@@ -55,4 +55,4 @@ io.on('connection', client => {
     })
 });
 
-server.listen(8000);
+server.listen(port);
