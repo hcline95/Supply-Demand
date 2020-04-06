@@ -1,5 +1,5 @@
 module.exports = { 
-  LEARDB_DATABASE_URL:{
+  CLEARDB_DATABASE_URL:{
     connectionLimit : 10,
     host            : 'localhost',
     user            : 'hannah_cline',

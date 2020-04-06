@@ -2,7 +2,7 @@ import io from 'socket.io-client';
 
 
 
-var socket = io('http://localhost:8000', {
+var socket = io('/', {
   transports: ['websocket', 'polling']
 });
 

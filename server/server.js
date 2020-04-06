@@ -5,7 +5,7 @@ var mysql = require('mysql');
 const keys = require('./config/keys');
 
 //connects SQL database
-var pool  = mysql.createPool(keys.LEARDB_DATABASE_URL);
+var pool  = mysql.createPool(keys.CLEARDB_DATABASE_URL);
 
 //sets up socket
 const io = require('socket.io')(server, {
