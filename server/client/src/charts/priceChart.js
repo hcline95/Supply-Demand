@@ -15,7 +15,7 @@ const PriceGraph = (props) => {
 
       return (
         <>
-            <LineChart width={600} height={225} data={props.data}>
+            <LineChart width={600} height={255} data={props.data}>
               <XAxis dataKey="name" />
               <YAxis />
               <Line dataKey="value" />

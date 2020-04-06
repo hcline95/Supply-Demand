@@ -34,7 +34,7 @@ const Stage = (props) => {
               <h4><strong>Stage There.</strong></h4>
               <p>There is still a shortage in the market.
                 New suppliers, such as local distilleries, jump into the market to meet that need, but there is a lag time until the product is at market.
-                When new suppliers enter the market it shifts the supply curve to the right, the pricce begins to drop and quanity produced increases.  
+                When new suppliers enter the market it shifts the supply curve to the right, the pricce begins to drop and quantity produced increases.  
                 By the end of that stage, production has finally reach the new market demands from the pandemic.
               </p>
           </>
@@ -45,7 +45,7 @@ const Stage = (props) => {
         <>
             <h4><strong>Stage Four.</strong></h4>
             <p>The pandemic is finally starting to subside! The demand curve is slowly moving to the left,
-              price is dropping, and the quanity bought also has dropped. 
+              price is dropping, and the quantity bought also has dropped. 
             </p>
         </>
       )
@@ -74,7 +74,6 @@ const Stage = (props) => {
 
 
     function mapStateToProps(state) {
-      console.log(state.Stage)
         return ({
             stage: state.Stage
         })

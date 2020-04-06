@@ -45,7 +45,7 @@ class SupplyDemandGraph extends React.Component {
               },
               scaleLabel: {
                 display: true,
-                labelString: 'Quanity (in hundred thousands)',
+                labelString: 'Quantity (in hundred thousands)',
                 fontSize: 24
               }
             }],
@@ -103,7 +103,7 @@ class SupplyDemandGraph extends React.Component {
               },
               scaleLabel: {
                 display: true,
-                labelString: 'Quanity (in hundred thousands)',
+                labelString: 'Quantity (in hundred thousands)',
                 fontSize: 24
               }
             }],

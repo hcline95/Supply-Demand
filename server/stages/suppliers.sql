@@ -2,7 +2,7 @@
 /*drop table supply_demand
 
 /* Create the schema for our tables */
-create table suppliers(id int, company_id int, stage int, brand text, quanity_produced int);
+create table suppliers(id int, company_id int, stage int, brand text, quantity_produced int);
 
 /* Populate the tables with our data */
 

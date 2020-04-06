@@ -20,7 +20,7 @@ class Animation extends React.Component {
   componentDidMount() {
     
     setInterval(() => {
-    const list = this.props.suppliers.sort((a, b) => (a.quanity_produced < b.quanity_produced) ? 1 : (a.quanity_produced === b.quanity_produced) ? ((a.quanity_produced < b.quanity_produced) ? 1 : -1) : -1 )
+    const list = this.props.suppliers.sort((a, b) => (a.quantity_produced < b.quantity_produced) ? 1 : (a.quantity_produced === b.quantity_produced) ? ((a.quantity_produced < b.quantity_produced) ? 1 : -1) : -1 )
 
       this.setState({
         items: list
@@ -43,7 +43,7 @@ class Animation extends React.Component {
             <Col>
             <br />
             <Row className='title justify-content-md-center'>
-            <MarketShareGraph name={item.brand} quanity={item.quanity_produced} />
+            <MarketShareGraph name={item.brand} item_quantity={item.quantity_produced} />
           
             </Row>
             <br />
@@ -53,12 +53,11 @@ class Animation extends React.Component {
             </Row>
             <br/>
             <Row className='title justify-content-md-center'>
-            <h4><strong> {item.quanity_produced}</strong></h4>
-            <i class="fas fa-arrow-up"></i>
+            <h4><strong> {item.quantity_produced}</strong></h4>
             </Row>
             <br />
             <Row className='title justify-content-md-center'>
-            <p className="description">At full Capacity. </p>
+            <p className="description">Desciption. </p>
             </Row>
             </Col>
             <div className="pop">
@@ -73,6 +72,7 @@ class Animation extends React.Component {
 }
 
 function mapStateToProps(state) {
+  console.log(state.Quantity)
     return ({
         suppliers: state.Suppliers
     })

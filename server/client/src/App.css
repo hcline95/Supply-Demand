@@ -17,7 +17,9 @@
 .app{
   padding-right:150px;
   padding-left:150px;
+  background-color: rgb(255, 214, 109);
 }
+
 
 
 li.list {
@@ -31,7 +33,7 @@ li.list {
 }
 
 body{
-  background-color: #eee;
+  background-color: #343a40;
 }
 
 tr{
@@ -45,34 +47,13 @@ ul{
 
 td{
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+ 
 }
 
 .popover {
   position: relative;
 }
 
-.carousel{
-  height:100%;
-  width:100%;
-}
-
-.carousel-caption{
-  color: black;
-  bottom:10%;
-  top:10%;
-}
-
-.carousel-caption.title{
-  top:10%;
-  bottom:auto;
-  color: black;
-}
-
-.carousel-caption.bottom{
-  bottom:10%;
-  top:auto;
-  color: black;
-}
 
 .econLab{
   font-size: 1500%;
@@ -86,24 +67,6 @@ td{
   border-top:solid;
   border-width: 20px;
   border-color:#eee
-}
-
-.card{
-  height: 100%;
-  border: solid;
-  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
-  border-color: rgb(255, 214, 109);
-  border-width: 50px;
-}
-
-
-.card-text.final{
-  padding-top: 12%;  
-  padding-bottom: auto;
-}
-
-.card-title{
-  padding-top:5%;
 }
 
 .nav{
@@ -135,18 +98,25 @@ img{
 }
 
 
-.card.info{
 
-  border: solid;
-  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
-  border-color: #eee;
-  border-width: 20px;
-}
 
 .home-container{
-  background-color: white;
-  border: solid;
-  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
-  border-color: black;
-  border-width: 10px;
+  
+
+  padding-right:150px;
+  padding-left:150px;
+}
+
+.icon{
+  font-size: 3rem;
+}
+
+.table{
+  margin-top:20px;
+}
+
+
+
+td.quantity-price-num{
+  width:300px;
 }

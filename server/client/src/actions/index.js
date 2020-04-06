@@ -1,4 +1,4 @@
-import { FETCH_DATA, RESET_DATA, FETCH_GRAPH, FETCH_EQUALIBRIUM, FETCH_SUPPLIERS, FETCH_STAGE,SET_DEMAND_CURVE, SET_SUPPLY_CURVE } from './types';
+import { FETCH_DATA, RESET_DATA, FETCH_QUANTITY, FETCH_GRAPH, FETCH_EQUALIBRIUM, FETCH_SUPPLIERS, FETCH_STAGE,SET_DEMAND_CURVE, SET_SUPPLY_CURVE } from './types';
 
 export function fetchData(number) {
     return {
@@ -17,6 +17,13 @@ export function fetchData(number) {
     return {
       type: FETCH_GRAPH,
       payload: lines
+    };
+  }
+
+  export function fetchQuantity(quantity) {
+    return {
+      type: FETCH_QUANTITY,
+      payload: quantity
     };
   }
 

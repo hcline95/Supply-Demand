@@ -11,16 +11,16 @@ import {
 
 
 
-const EqualibriumGraph = (props) => {
-
+const QuantityGraph = (props) => {
+    console.log(props.quantity)
       return (
+          
         <>
-        <BarChart width={600} height={255} data={props.status}>
+        <BarChart width={600} height={225} data={props.quantity}>
             <YAxis />
             <Tooltip />
             <Legend />
-            <Bar dataKey="surplus" fill="#82ca9d" />
-            <Bar dataKey="shortage" fill='red' />
+            <Bar dataKey="Quantity" fill="#82ca9d" />
         </BarChart>
           </>
       );
@@ -29,8 +29,8 @@ const EqualibriumGraph = (props) => {
 
     function mapStateToProps(state) {
         return ({
-            status: state.Equalibrium.status
+            quantity: state.Tutorial.quantity
         })
       }
 
-      export default connect(mapStateToProps)(EqualibriumGraph);
+      export default connect(mapStateToProps)(QuantityGraph);

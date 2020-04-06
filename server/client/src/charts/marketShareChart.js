@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactMinimalPieChart from 'react-minimal-pie-chart';
+import { connect } from 'react-redux';
 
 
 
-export default function MarketShareGraph(props){
+function MarketShareGraph(props){
 
 
       return (
@@ -16,14 +17,14 @@ export default function MarketShareGraph(props){
             cy={50}
             data={[
             {
-            color: 'blue',
+            color: 'gray',
             title: 'Two',
-            value: 50 - props.quanity
+            value: props.quantity
             },
             {
-            color: 'green',
+            color: 'blue',
             title: props.name,
-            value: props.quanity
+            value: props.item_quantity
             }
             ]}
             label={false}
@@ -47,3 +48,12 @@ export default function MarketShareGraph(props){
       );
 
     }
+
+    function mapStateToProps(state) {
+    
+        return ({
+            quantity: state.Quantity
+        })
+      }
+    
+      export default connect(mapStateToProps)(MarketShareGraph);

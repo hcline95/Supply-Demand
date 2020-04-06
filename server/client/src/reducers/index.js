@@ -5,12 +5,14 @@ import EqualibriumReducer from './equalibrium';
 import SuppliersReducer from './suppliers';
 import StageReducer from './stage'
 import TutorialReducer from './tutorial'
+import QuantityReducer from './quantity'
 
 
 const rootReducer = combineReducers({
     Data: DataReducer,
     MainGraph: MainGraphReducer,
     Equalibrium: EqualibriumReducer,
+    Quantity: QuantityReducer,
     Suppliers: SuppliersReducer,
     Stage: StageReducer,
     Tutorial: TutorialReducer

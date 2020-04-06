@@ -2,7 +2,7 @@
 /*drop table supply_demand
 
 /* Create the schema for our tables */
-create table supply_demand(id int, stage decimal, demand1x int, demand1y int , demand2x int, demand2y int , supply1x int, supply1y int, supply2x int, supply2y int, price float(8,2), quanity int, equal int);
+create table supply_demand(id int, stage decimal, demand1x int, demand1y int , demand2x int, demand2y int , supply1x int, supply1y int, supply2x int, supply2y int, price float(8,2), quantity int, equal int);
 
 /* Populate the tables with our data */
 insert into supply_demand values(1, 10, -20, 6, 200, -5, 0, 0, 200, 10, 2.50, 50, 0 );
@@ -32,14 +32,14 @@ insert into supply_demand values(30, 30, 0, 25, 125, 0, 0, 0, 200, 10, 10.00, 75
 
 
 insert into supply_demand values(31, 31,    0, 25, 125, 0,  -.25, 0,    200, 9.75,  9.50, 75, -25 );
-insert into supply_demand values(32, 32,    0, 25, 125, 0,  -.5, 0,     200, 9.5,   9.10, 75, -22 );
-insert into supply_demand values(33, 33,    0, 25, 125, 0,  -.75, 0,    200, 9.25,  8.25, 75, -19 );
-insert into supply_demand values(34, 34,    0, 25, 125, 0,  -1, 0,      200, 9,     7.24, 75, -16 );
-insert into supply_demand values(35, 35,    0, 25, 125, 0,  -1.25, 0,   200, 8.75,  6.90, 75, -12 );
-insert into supply_demand values(36, 36,    0, 25, 125, 0,  -1.5, 0,    200, 8.5,   6.10, 75, -10 );
-insert into supply_demand values(37, 37,    0, 25, 125, 0,  -1.75, 0,   200, 8.25,  5.25, 75, -8 );
-insert into supply_demand values(38, 38,    0, 25, 125, 0,  -2, 0,      200, 8,     4.05, 75, -6);
-insert into supply_demand values(39, 39,    0, 25, 125, 0,  -2.25, 0,   200, 7.75,  3.46, 75, -3 );
+insert into supply_demand values(32, 32,    0, 25, 125, 0,  -.5, 0,     200, 9.5,   9.10, 78, -22 );
+insert into supply_demand values(33, 33,    0, 25, 125, 0,  -.75, 0,    200, 9.25,  8.25, 81, -19 );
+insert into supply_demand values(34, 34,    0, 25, 125, 0,  -1, 0,      200, 9,     7.24, 80, -16 );
+insert into supply_demand values(35, 35,    0, 25, 125, 0,  -1.25, 0,   200, 8.75,  6.90, 84, -12 );
+insert into supply_demand values(36, 36,    0, 25, 125, 0,  -1.5, 0,    200, 8.5,   6.10, 86, -10 );
+insert into supply_demand values(37, 37,    0, 25, 125, 0,  -1.75, 0,   200, 8.25,  5.25, 86, -8 );
+insert into supply_demand values(38, 38,    0, 25, 125, 0,  -2, 0,      200, 8,     4.05, 95, -6);
+insert into supply_demand values(39, 39,    0, 25, 125, 0,  -2.25, 0,   200, 7.75,  3.46, 105, -3 );
 
 
 

@@ -3,7 +3,7 @@ import React from 'react';
 
 import  { Button, Container, Row, Col, Table }  from 'react-bootstrap'
 import PopOver from '../modals/popover'
-
+import { connect } from 'react-redux';
 import Animation from '../modals/animation'
 
 const SupplierList = (props) => {
@@ -17,7 +17,8 @@ const SupplierList = (props) => {
             <h4><strong>Supply.</strong></h4>
             </Row>
             <Row>
-            <PopOver />
+            <h4><stong>Quantity: </stong></h4>
+            <h4><strong>{props.quantity * 100000}</strong></h4>
             </Row>
             </Col>
             <Col><Animation />
@@ -28,5 +29,10 @@ const SupplierList = (props) => {
 
     }
 
-
-      export default SupplierList;
+    function mapStateToProps(state) {
+        return ({
+            quantity: state.Quantity
+        })
+      }
+    
+      export default connect(mapStateToProps)(SupplierList);

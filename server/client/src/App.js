@@ -34,8 +34,11 @@ const App = (props) => {
       props.fetchSuppliers(suppliers)
     }) 
 
+    socket.on('quantity', (quantity)=>{
+      props.fetchQuantity(quantity)
+    }) 
+
     socket.on('stage', (stage)=>{
-      console.log('stage in socket', stage)
       props.fetchStage(stage)
     }) 
   })

@@ -3,7 +3,8 @@ import Chart from 'chart.js'
 import { connect } from 'react-redux';
 import  { Container, Row, Col, Table,Button, Pagination }  from 'react-bootstrap'
 import * as actions from '../actions';
-import PriceGraph from './priceChart'
+import PriceGraph from './priceChart';
+import QuantityGraph from './quantity'
 
 
 class TutorialGraph extends React.Component {
@@ -73,7 +74,7 @@ class TutorialGraph extends React.Component {
               },
               scaleLabel: {
                 display: true,
-                labelString: 'Quanity (in hundreds)',
+                labelString: 'Quantity (in hundreds)',
                 fontSize: 24
               }
             }],
@@ -131,7 +132,7 @@ class TutorialGraph extends React.Component {
                 },
                 scaleLabel: {
                   display: true,
-                  labelString: 'Quanity (in hundreds)',
+                  labelString: 'Quantity (in hundreds)',
                   fontSize: 24
                 }
               }],
@@ -159,34 +160,25 @@ class TutorialGraph extends React.Component {
     
       <Row className='justify-content-md-center'>
         <Col>
+        <td>
+          <tr>
+      <h4><strong>Try moving it yourself.</strong></h4>
+      <p>Move the Demand and Supply curve to see how Price and Quantity will change!</p>
+        
+      </tr>
+      <tr>
           <Row className='justify-content-md-center'>
             <h4><strong>Supply & Demand</strong></h4>
             <canvas ref={this.chartRef} className="img-fluid" id="graph" />
           </Row>
-        </Col>
-        <Col md="auto">
-        
-          <h1><strong>Price:</strong></h1>
-          <h1><strong className={this.props.color}>${this.props.equalibriumX}</strong></h1>
-          <br/>
-          <h1 ><strong>Quanity:</strong></h1>
-          <h1><strong className={this.props.color}>{this.props.equalibriumY * 100}</strong></h1>
-     
-
-    
-  
-      <Row className='justify-content-md-center'>
-        <Col>
-          <p>Click the right arrow to move the demand line right.</p>
-  
+      </tr>
+      <tr>
           <Row  className='justify-content-md-center'>
             <Col>
             <Button onClick={this.handleClick} variant="outline-dark" value='demandLeft' size="lg"><i class="fas fa-arrow-left"></i> Left</Button>
             <Button size="lg" variant="dark" >Demand</Button>
             <Button onClick={this.handleClick} variant="outline-dark" value='demandRight' size="lg">Right <i class="fas fa-arrow-right"></i></Button>
             </Col>
-          </Row>
-          <Row>
             <Col>
             <Button onClick={this.handleClick} variant="outline-dark" size="lg" value='supplyLeft'><i class="fas fa-arrow-left"></i> Left</Button>         
             
@@ -194,20 +186,52 @@ class TutorialGraph extends React.Component {
             <Button onClick={this.handleClick} variant="outline-dark" size="lg" value='supplyRight'>Right <i class="fas fa-arrow-right"></i></Button>
             </Col>
           </Row>
+          </tr>
+          </td>
+        </Col>
+    
+        <td>
+       <tr>
+      
      
-        </Col>
-      </Row>
-      </Col>
-      </Row>
-      <Row  className='justify-content-md-center'>
-        <Col>
-          <Row  className='justify-content-md-center'>
-          <h4><strong>Price</strong></h4>
+          <Row className='justify-content-md-center price-quantity'>
+          <tr className='quantity-price'>
+          <td className='quantity-price-num'>
+          <h1><strong>Price:</strong></h1>
+          <h1><strong className={this.props.color}>${this.props.equalibriumY}</strong></h1>
+          </td>
+          </tr>
+          <tr className='quantity-price'>
+         <td className='quantity-price-num'>
+          <h1 ><strong>Quantity:</strong></h1>
+          <h1><strong className={this.props.color}>{this.props.equalibriumX * 100}</strong></h1>
+          </td>
+          </tr>
+      
           </Row>
-          <Row  className='justify-content-md-center'>
+       
+    
+  
+      <Row className='justify-content-md-center'>
+        <tr>
+          <td>
+  
           <PriceGraph />
-          </Row>
-        </Col>
+
+   
+          </td>
+          </tr>
+      </Row>
+      <tr>
+          <td>
+  
+          <QuantityGraph />
+          
+   
+          </td>
+          </tr>
+    </tr>
+      </td>
       </Row>
   </>
       )
