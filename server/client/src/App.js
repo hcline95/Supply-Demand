@@ -24,6 +24,7 @@ const App = (props) => {
     
 
     socket.on('number', (number)=>{
+      console.log('made it to price')
       props.fetchData(number)
     })
 
@@ -37,6 +38,7 @@ const App = (props) => {
     }) 
 
     socket.on('quantity', (quantity)=>{
+      console.log('made it to price')
       props.fetchQuantity(quantity)
     }) 
 
@@ -45,7 +47,11 @@ const App = (props) => {
     }) 
 
     socket.on('diary', (diary)=>{
+      console.log('made it to diary')
       props.fetchDiary(diary)
+    }) 
+    socket.on('random', (results)=>{
+      console.log(results)
     }) 
   })
 

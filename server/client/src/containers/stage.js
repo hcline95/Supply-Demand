@@ -12,9 +12,9 @@ const Stage = (props) => {
         return (
           <>
               <h4><strong>Stage One.</strong></h4>
-              <p>The pandemic has begun and worry is starting to spread. 
-                The demand for sanitizer is rapidly increasing pushing the Demand curve to the right.
-                The curve is also becoming more inelastic (vertical) because the demand for sanitizer is becoming ess effect by changes in price.
+              <p>The pandemic has begun, and worry is starting to spread. 
+                The demand for sanitizer is rapidly increasing, pushing the Demand curve to the right.
+                The curve is also becoming more inelastic (vertical) because the demand for sanitizer is becoming less effected by changes in price.
                 The price sky rockets, while the supply has remained steady.
               </p>
           </>
@@ -32,11 +32,11 @@ const Stage = (props) => {
       }else if(props.stage>=30 && props.stage < 40) {
         return (
           <>
-              <h4><strong>Stage There.</strong></h4>
+              <h4><strong>Stage Three.</strong></h4>
               <p>There is still a shortage in the market.
-                New suppliers, such as local distilleries, jump into the market to meet that need, but there is a lag time until the product is at market.
-                When new suppliers enter the market it shifts the supply curve to the right, the pricce begins to drop and quantity produced increases.  
-                By the end of that stage, production has finally reach the new market demands from the pandemic.
+                New suppliers, such as local distilleries, jump into the market to meet the need, but there is a lag time until the product is at market.
+                When new suppliers enter the market it shifts the supply curve to the right, the price begins to drop and quantity produced increases.  
+                By the end of this stage, production has finally reached the new market demands of the pandemic.
               </p>
           </>
 
@@ -56,7 +56,7 @@ const Stage = (props) => {
             <h4><strong>Stage Five.</strong></h4>
             <p>Unfortunately, there is no need for the extra production any more. 
               The price is too low for all the suppliers to stay in the market.
-              The distilleries return to their the drinking spirits market and 
+              The distilleries return to the drinking spirits market and 
               sanitizer companies return to their initial production levels before the pandemic began. 
             </p>
         </>
@@ -65,7 +65,7 @@ const Stage = (props) => {
         return (
           <>
               <h4><strong>Stage Six.</strong></h4>
-              <p>All has returned to normal! After the extra suppliers dropped out the price increase to its original amount. 
+              <p>All has returned to normal! After the extra suppliers drop out the price increases to its original amount. 
               </p>
           </>
         )

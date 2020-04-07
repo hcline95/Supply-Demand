@@ -69,3 +69,5 @@ export function fetchData(number) {
       payload: {coordinate: coordinate, equalibrium: equalibrium, color: color}
   }
   }
+
+  

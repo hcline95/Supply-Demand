@@ -6,9 +6,15 @@ import socket from './socket'
 const NavBar = () => {
 
   const clickHandler=()=>{
+
     socket.emit('myClick')
-    this.resetData()
   }
+
+  const clickHandlerRandom=()=>{
+    
+    socket.emit('myClickRandom')
+  }
+
   
     return (
 <Navbar collapseOnSelect className='nav' expand="lg" bg="dark" variant="dark">
@@ -17,7 +23,8 @@ const NavBar = () => {
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="mr-auto">
       <Nav.Link href="/#About"><h5>About</h5></Nav.Link>
-      <Nav.Link href="/simulation" onClick={clickHandler}><h5>Hand Sanitizer Simulation</h5></Nav.Link>
+      <Nav.Link href="/simulation" value='sanitizer' onClick={clickHandler}><h5>Hand Sanitizer Simulation</h5></Nav.Link>
+      <Nav.Link  href="/randomizer" onClick={clickHandlerRandom}><h5>Randomizer</h5></Nav.Link>
     </Nav>
     <Nav>
       <Nav.Link >

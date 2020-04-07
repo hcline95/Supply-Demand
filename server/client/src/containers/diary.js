@@ -16,7 +16,7 @@ const Diary = (props) => {
         return(
           <Row>  
        
-          <p><strong>{day.day}</strong>: The price was ${day.price} and the quantity was {day.quantity}0,000. {day.description} </p>
+          <p><strong>{day.day}</strong>: The price was ${day.price} and the quantity was {day.quantity}. {day.description} </p>
         </Row>
 
         )

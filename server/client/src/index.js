@@ -8,6 +8,7 @@ import reducers from './reducers';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import ReduxPromise from 'redux-promise';
+import Random from './containers/random'
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
@@ -17,6 +18,7 @@ ReactDOM.render(
       <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/simulation" component={App} />
+            <Route exact path="/randomizer" component={Random} />
           </Switch>
       </Router>
     </Provider>,

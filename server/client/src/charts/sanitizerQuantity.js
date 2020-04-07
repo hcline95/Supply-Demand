@@ -28,7 +28,7 @@ const SanitizerQuantityGraph = (props) => {
     }
 
     function mapStateToProps(state) {
-        console.log(state.Quantity)
+      console.log(state.Quantity)
         return ({
             quantity: state.Quantity.quantity
         })
