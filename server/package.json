@@ -13,7 +13,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
     "express": "^4.17.1",
     "mysql": "latest",
     "nodemon": "^2.0.2",
