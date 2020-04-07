@@ -14,7 +14,7 @@ const Diary = (props) => {
       <div class="scrollable">
       {props.diary.map(function(day){
         return(
-          <Row>  
+        <Row>  
        
           <p><strong>{day.day}</strong>: The price was ${day.price} and the quantity was {day.quantity}. {day.description} </p>
         </Row>
