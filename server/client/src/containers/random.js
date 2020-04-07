@@ -18,36 +18,8 @@ import Diary from './containers/diary'
 
 
 
-const App = (props) => {
+const Random = (props) => {
 
-   useEffect(() =>{
-    
-
-    socket.on('number', (number)=>{
-      props.fetchData(number)
-    })
-
-    socket.on('mainGraph', (lines)=>{
-      props.fetchGraph(lines)
-      props.fetchEqualibrium(lines)
-    })   
-    
-    socket.on('suppliers', (suppliers)=>{
-      props.fetchSuppliers(suppliers)
-    }) 
-
-    socket.on('quantity', (quantity)=>{
-      props.fetchQuantity(quantity)
-    }) 
-
-    socket.on('stage', (stage)=>{
-      props.fetchStage(stage)
-    }) 
-
-    socket.on('diary', (diary)=>{
-      props.fetchDiary(diary)
-    }) 
-  })
 
 
       return (
@@ -117,9 +89,6 @@ const App = (props) => {
  
   }
 
-  export default connect(
-    null,
-    actions
-  )(App);
+  export default Random
 
   

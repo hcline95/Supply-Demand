@@ -8,15 +8,12 @@ import {useEffect} from 'react'
 
 const Stage = (props) => {
 
-  
-  
-  const paragraph=()=>{
       if (props.stage>=0 && props.stage<20 ){
         return (
           <>
               <h4><strong>Stage One.</strong></h4>
               <p>The pandemic has begun and worry is starting to spread. 
-                The demand for sanitizer is rapidly increasing pushing the Demand curve to the left.
+                The demand for sanitizer is rapidly increasing pushing the Demand curve to the right.
                 The curve is also becoming more inelastic (vertical) because the demand for sanitizer is becoming ess effect by changes in price.
                 The price sky rockets, while the supply has remained steady.
               </p>
@@ -74,32 +71,14 @@ const Stage = (props) => {
         )
       }
     }
-    return(
-      <>
-      {paragraph()}
-      <div class="scrollable">
-      {props.diary.map(function(day){
-        return(
-          <Row>  
-       
-          <p><strong>{day.day}</strong>: The price was ${day.price} and the quantity was {day.quantity}0,000. {day.description} </p>
-        </Row>
-
-        )
-      })}
-      </div>
-        
-      </>
-    )
-
-    }
+ 
 
 
     function mapStateToProps(state) {
-      console.log(state.Diary.diary)
+     
         return ({
             stage: state.Stage,
-            diary:state.Diary.diary
+          
         })
       }
 

@@ -42,7 +42,7 @@ io.on('connection', client => {
 
                     io.emit('diary', {day: `Day ${row.stage * 2}`, price:row.price, quantity:row.quantity, description:row.description})
                 
-                    io.emit('quantity', row.quantity)
+                    io.emit('quantity', {Quantity: row.quantity})
                     //price graph
                    
                     io.emit('number', {name:`Day ${row.stage * 2}`, value:row.price})

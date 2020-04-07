@@ -202,7 +202,7 @@ class TutorialGraph extends React.Component {
           <tr className='quantity-price'>
           <td className='quantity-price-num'>
           <h1><strong>Price:</strong></h1>
-          <h1><strong className={this.props.color}>${this.props.equalibriumY}</strong></h1>
+          <h1><strong className={this.props.color}>${this.props.equalibriumY.toFixed(2)}</strong></h1>
           </td>
           </tr>
           <tr className='quantity-price'>

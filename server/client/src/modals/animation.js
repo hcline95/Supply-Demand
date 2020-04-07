@@ -62,7 +62,6 @@ class Animation extends React.Component {
 }
 
 function mapStateToProps(state) {
-  console.log(state.Quantity)
     return ({
         suppliers: state.Suppliers
     })

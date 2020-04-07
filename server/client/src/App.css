@@ -121,7 +121,8 @@ td.quantity-price-num{
 }
 
 .scrollable {
-  height: 100px;
+  height: 220px;
+  width:600px;
   overflow-y: auto;
   padding-left:20px;
 }
@@ -134,5 +135,10 @@ td.quantity-price-num{
   left:0;
   text-align:center;
   padding-top: 70%;
+}
+
+.stage{
+  width:600px;
+  height:85px;
 }
 

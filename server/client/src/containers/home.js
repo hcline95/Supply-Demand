@@ -54,7 +54,7 @@ const Home = (props) => {
                     <Row className='justify-content-md-center'>
                         <td>
                         <Col>
-                            <h1><strong>Five ways the Demand Curve Shifts</strong></h1>
+                            <h2><strong>Five ways the Demand Curve Shifts</strong></h2>
                             <ol>
                             <li>Prices of related goods (ex Peanut Butter and Jelly, Gas vs. Electric)</li>
                             <li>Disposable income</li>
@@ -66,7 +66,7 @@ const Home = (props) => {
                         </td>
                         <td>
                         <Col>
-                            <h1><strong>Five ways the Supply Curve Shifts</strong></h1>
+                            <h2><strong>Five ways the Supply Curve Shifts</strong></h2>
                             <ol>
                             <li>Number of seller</li>
                             <li>Cost of raw materials</li>

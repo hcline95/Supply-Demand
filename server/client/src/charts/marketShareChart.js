@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 
 function MarketShareGraph(props){
-  console.log(props)
+
 
       return (
         <ReactMinimalPieChart
@@ -56,7 +56,7 @@ function MarketShareGraph(props){
     function mapStateToProps(state) {
     
         return ({
-            quantity: state.Quantity
+            quantity: state.Quantity.quantity[state.Quantity.quantity.length-1].Quantity
         })
       }
     

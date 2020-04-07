@@ -14,7 +14,7 @@ const SupplierList = (props) => {
             <Row>
             <Col md="auto">
             <Row>
-            <h4><strong>Supply.</strong></h4>
+            <h4><strong>Suppliers.</strong></h4>
             </Row>
             </Col>
             <Col><Animation />
