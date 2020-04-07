@@ -173,19 +173,23 @@ class TutorialGraph extends React.Component {
           </Row>
       </tr>
       <tr>
-          <Row  className='justify-content-md-center'>
+        <td>
+          <Row  className='buttons-on-graph justify-content-md-center'>
             <Col>
             <Button onClick={this.handleClick} variant="outline-dark" value='demandLeft' size="lg"><i class="fas fa-arrow-left"></i> Left</Button>
             <Button size="lg" variant="dark" >Demand</Button>
             <Button onClick={this.handleClick} variant="outline-dark" value='demandRight' size="lg">Right <i class="fas fa-arrow-right"></i></Button>
             </Col>
+            <Row  className='justify-content-md-center'>
             <Col>
             <Button onClick={this.handleClick} variant="outline-dark" size="lg" value='supplyLeft'><i class="fas fa-arrow-left"></i> Left</Button>         
             
             <Button size="lg" variant="dark" >Supply </Button>
             <Button onClick={this.handleClick} variant="outline-dark" size="lg" value='supplyRight'>Right <i class="fas fa-arrow-right"></i></Button>
             </Col>
+            </Row>
           </Row>
+          </td>
           </tr>
           </td>
         </Col>

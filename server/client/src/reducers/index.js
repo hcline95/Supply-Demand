@@ -6,6 +6,7 @@ import SuppliersReducer from './suppliers';
 import StageReducer from './stage'
 import TutorialReducer from './tutorial'
 import QuantityReducer from './quantity'
+import DiaryReducer from './diary'
 
 
 const rootReducer = combineReducers({
@@ -15,7 +16,8 @@ const rootReducer = combineReducers({
     Quantity: QuantityReducer,
     Suppliers: SuppliersReducer,
     Stage: StageReducer,
-    Tutorial: TutorialReducer
+    Tutorial: TutorialReducer,
+    Diary: DiaryReducer
 });
 
 export default rootReducer;

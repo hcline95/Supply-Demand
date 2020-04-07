@@ -1,8 +1,4 @@
 
-.pie-chart{
-  height:40px;
-  width:40px;
-}
 
 .divider{
   padding-right: 20px;
@@ -25,7 +21,6 @@
 li.list {
   display:inline-block;
   border-radius: 2px;
-  background: rgb(205, 233, 205);
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
   width: 175px;
   height: 250px;
@@ -120,3 +115,24 @@ img{
 td.quantity-price-num{
   width:300px;
 }
+
+.buttons-on-graph{
+  padding: 10px;
+}
+
+.scrollable {
+  height: 100px;
+  overflow-y: auto;
+  padding-left:20px;
+}
+
+.chart-inner-text{
+  position:absolute;
+  top:0;
+  bottom: 0;
+  right:0;
+  left:0;
+  text-align:center;
+  padding-top: 70%;
+}
+

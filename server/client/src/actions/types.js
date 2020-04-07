@@ -25,3 +25,5 @@ export const FETCH_STAGE = 'fetch_stage'
 export const SET_DEMAND_CURVE = 'set_demand_curve'
 
 export const SET_SUPPLY_CURVE = 'set_supply_curve'
+
+export const FETCH_DIARY = 'fetch_diary'

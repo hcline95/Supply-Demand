@@ -34,7 +34,7 @@ const Home = (props) => {
                         </Col>
                     </Row >
                     <Container fluid='fluid' className='home-container'>
-                        <Table bordered hover responsive>
+                        <Table bordered responsive>
                             <tbody>
                                 <td>
                     <tr>

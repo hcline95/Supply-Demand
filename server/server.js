@@ -1,5 +1,6 @@
-const server = http.createServer(app);
+const server = require('http').createServer();
 const express = require('express');
+const line = require('./formula')
 var mysql = require('mysql');
 const keys = require('./config/keys');
 const port = process.env.PORT || 8000;
@@ -12,8 +13,7 @@ const io = require('socket.io')(server, {
   transports: ['websocket', 'polling']
 });
 
-//days for graphs
-let day = 0
+
 
 //connects to socket
 io.on('connection', client => {
@@ -39,11 +39,13 @@ io.on('connection', client => {
                     })
 
                     io.emit('stage', row.stage)
+
+                    io.emit('diary', {day: `Day ${row.stage * 2}`, price:row.price, quantity:row.quantity, description:row.description})
                 
                     io.emit('quantity', row.quantity)
                     //price graph
-                    day = day + 1
-                    io.emit('number', {name:`Day ${day * 3}`, value:row.price})
+                   
+                    io.emit('number', {name:`Day ${row.stage * 2}`, value:row.price})
 
                     //main supply and demand graph
                     io.emit('mainGraph', {demand:[{x:row.demand1x, y:row.demand1y}, {x:row.demand2x, y:row.demand2y}], supply:[{x:row.supply1x, y:row.supply1y}, {x:row.supply2x, y:row.supply2y}], equalibrium: row.equal})

@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 
 function MarketShareGraph(props){
-
+  console.log(props)
 
       return (
         <ReactMinimalPieChart
@@ -35,14 +35,18 @@ function MarketShareGraph(props){
             onMouseOut={undefined}
             onMouseOver={undefined}
             paddingAngle={5}
-            radius={40}
+            radius={30}
             rounded={false}
-            startAngle={0}
+            startAngle={340}
             viewBoxSize={[
-            10,
-            10
-            ]}
-/>
+            100,
+            100
+            ]}>
+              <div className='chart-inner-text d-flex flex-column'>
+                  <h4 className={props.item_previous_quantity > props.item_quantity ? 'red' : 'green'}><strong> {Math.round(100 - (props.item_previous_quantity/props.item_quantity * 100))}%</strong></h4>
+              </div>
+            </ReactMinimalPieChart>
+
 
 
       );

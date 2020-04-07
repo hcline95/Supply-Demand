@@ -1,9 +1,16 @@
-import { FETCH_DATA, RESET_DATA, FETCH_QUANTITY, FETCH_GRAPH, FETCH_EQUALIBRIUM, FETCH_SUPPLIERS, FETCH_STAGE,SET_DEMAND_CURVE, SET_SUPPLY_CURVE } from './types';
+import { FETCH_DATA, RESET_DATA, FETCH_QUANTITY, FETCH_DIARY, FETCH_GRAPH, FETCH_EQUALIBRIUM, FETCH_SUPPLIERS, FETCH_STAGE,SET_DEMAND_CURVE, SET_SUPPLY_CURVE } from './types';
 
 export function fetchData(number) {
     return {
       type: FETCH_DATA,
       payload: number
+    };
+  }
+
+  export function fetchDiary(entry) {
+    return {
+      type: FETCH_DIARY,
+      payload: entry
     };
   }
 

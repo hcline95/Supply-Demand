@@ -43,25 +43,15 @@ class Animation extends React.Component {
             <Col>
             <br />
             <Row className='title justify-content-md-center'>
-            <MarketShareGraph name={item.brand} item_quantity={item.quantity_produced} />
-          
-            </Row>
-            <br />
-            <Row className='title justify-content-md-center'>
            
-            <h4><strong >{item.brand}</strong></h4>
-            </Row>
-            <br/>
+           <h4><strong >{item.brand}</strong></h4>
+           </Row>
             <Row className='title justify-content-md-center'>
-            <h4><strong> {item.quantity_produced}</strong></h4>
+            <MarketShareGraph name={item.brand} item_quantity={item.quantity_produced} item_previous_quantity={item.previous_quantity} />
             </Row>
-            <br />
-            <Row className='title justify-content-md-center'>
-            <p className="description">Desciption. </p>
-            </Row>
+
             </Col>
-            <div className="pop">
-            </div>
+    
             </Row>
             </Item>)}</PoseGroup>
         </ul>

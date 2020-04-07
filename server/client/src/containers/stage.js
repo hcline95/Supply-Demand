@@ -1,12 +1,16 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
+import  {Row}  from 'react-bootstrap';
+import * as actions from '../actions';
+import {useEffect} from 'react'
 
 
 const Stage = (props) => {
 
   
-
+  
+  const paragraph=()=>{
       if (props.stage>=0 && props.stage<20 ){
         return (
           <>
@@ -69,14 +73,34 @@ const Stage = (props) => {
           </>
         )
       }
+    }
+    return(
+      <>
+      {paragraph()}
+      <div class="scrollable">
+      {props.diary.map(function(day){
+        return(
+          <Row>  
+       
+          <p><strong>{day.day}</strong>: The price was ${day.price} and the quantity was {day.quantity}0,000. {day.description} </p>
+        </Row>
+
+        )
+      })}
+      </div>
+        
+      </>
+    )
 
     }
 
 
     function mapStateToProps(state) {
+      console.log(state.Diary.diary)
         return ({
-            stage: state.Stage
+            stage: state.Stage,
+            diary:state.Diary.diary
         })
       }
 
-      export default connect(mapStateToProps)(Stage);
+      export default connect(mapStateToProps, actions)(Stage);

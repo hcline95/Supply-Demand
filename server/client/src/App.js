@@ -41,6 +41,11 @@ const App = (props) => {
     socket.on('stage', (stage)=>{
       props.fetchStage(stage)
     }) 
+
+    socket.on('diary', (diary)=>{
+      console.log('diary', diary)
+      props.fetchDiary(diary)
+    }) 
   })
 
 

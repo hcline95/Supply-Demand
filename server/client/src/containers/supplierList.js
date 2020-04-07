@@ -16,10 +16,6 @@ const SupplierList = (props) => {
             <Row>
             <h4><strong>Supply.</strong></h4>
             </Row>
-            <Row>
-            <h4><stong>Quantity: </stong></h4>
-            <h4><strong>{props.quantity * 100000}</strong></h4>
-            </Row>
             </Col>
             <Col><Animation />
             </Col>
