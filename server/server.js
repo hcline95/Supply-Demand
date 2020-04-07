@@ -49,6 +49,7 @@ io.on('connection', client => {
 
                     //main supply and demand graph
                     io.emit('mainGraph', {demand:[{x:row.demand1x, y:row.demand1y}, {x:row.demand2x, y:row.demand2y}], supply:[{x:row.supply1x, y:row.supply1y}, {x:row.supply2x, y:row.supply2y}], equalibrium: row.equal})
+                    
 
                 }, i * 2000);
             });
