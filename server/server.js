@@ -1,5 +1,5 @@
 const server = require('http').createServer();
-const line = require('./formula')
+const express = require("express")
 var mysql = require('mysql');
 const keys = require('./config/keys');
 const port = process.env.PORT || 8000;
@@ -7,7 +7,7 @@ const port = process.env.PORT || 8000;
 //connects SQL database
 var pool  = mysql.createPool(keys.CLEARDB_DATABASE_URL);
 
-const express = require("express")
+
 const app = express()
 // use the express-static middleware
 app.use(express.static("public"))
