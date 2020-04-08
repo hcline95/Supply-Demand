@@ -8,6 +8,9 @@ const port = process.env.PORT || 8000;
 //connects SQL database
 var pool  = mysql.createPool(keys.CLEARDB_DATABASE_URL);
 
+const express = require("express")
+const app = express()
+
 if (process.env.NODE_ENV === 'production') {
     // Express will serve up production assets
     // like our main.js file, or main.css file!
