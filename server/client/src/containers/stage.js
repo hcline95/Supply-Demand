@@ -1,9 +1,8 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
-import  {Row}  from 'react-bootstrap';
 import * as actions from '../actions';
-import {useEffect} from 'react'
+
 
 
 const Stage = (props) => {

@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import {
   Bar,
   Legend,
-  XAxis,
   YAxis,
   Tooltip,
   BarChart

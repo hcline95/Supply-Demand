@@ -1,12 +1,10 @@
 import React from 'react';
-import Component from 'react'
-import ReactDOM from 'react-dom';
 import posed, { PoseGroup } from 'react-pose';
-import  { Button, Container, Row, Col, Table }  from 'react-bootstrap'
+import  {  Row, Col }  from 'react-bootstrap'
 import { connect } from 'react-redux';
 import MarketShareGraph from '../charts/marketShareChart'
-import PopOver from '../modals/popover'
-import useRef from 'react'
+
+
 
 
 

@@ -2,7 +2,7 @@
 import React from 'react';
 
 import  { Button, Container, Row, Col, Table }  from 'react-bootstrap'
-import PopOver from '../modals/popover'
+
 import { connect } from 'react-redux';
 import Animation from '../modals/animation'
 

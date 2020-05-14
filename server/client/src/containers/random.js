@@ -1,11 +1,9 @@
 
 import React from 'react';
 import RandomGraph from '../charts/randomSupply';
-import  { Container, Row, Col, Table }  from 'react-bootstrap'
+import  { Container, Row, Table }  from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Price from './price'
-import Equalibrium from './equalibrium'
-import SupplierList from './supplierList'
 import NavBar from './navBar';
 import SanitizerQuantityGraph from '../charts/sanitizerQuantity'
 import Diary from './diary'

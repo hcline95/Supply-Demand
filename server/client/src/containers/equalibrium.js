@@ -1,5 +1,4 @@
 import React from 'react';
-import  { Button, Popover, OverlayTrigger}  from 'react-bootstrap'
 import EqualibriumGraph from '../charts/equalibriumChart';
 import { connect } from 'react-redux';
 

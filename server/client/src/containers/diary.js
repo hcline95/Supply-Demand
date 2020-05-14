@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import  {Row}  from 'react-bootstrap';
 import * as actions from '../actions';
-import {useEffect} from 'react'
+
 
 
 const Diary = (props) => {
@@ -14,13 +14,13 @@ const Diary = (props) => {
       <div class="scrollable">
       {props.diary.map(function(day){
         return(
-        <Row>  
+        <Row >  
        
-          <p><strong>{day.day}</strong>: The price was ${day.price} and the quantity was {day.quantity}. {day.description} </p>
+          <p><strong>{day.day}</strong>: The price was ${day.price} and the quantity was {day.quantity}0,000. {day.description} </p>
         </Row>
-
         )
       })}
+
       </div>
         
       </>
